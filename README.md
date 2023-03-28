@@ -39,10 +39,13 @@ To do this, the repository consists of :
     - The first's message is : `patch: some patch`
     - The second's message is : `feat(script): add a script`
     - The third's message is : `feat: add a feature`
+- A fourth commit with a malformed message (not finishing by a `(#[number])`) which will be ignored and containing 2 commits :
+    - The first' message is : `feat(func2): add a feature`
+    - The second's message is : `fix: fix a func`
 
 Therefore, the test must return :
 - `commits.length = 3`
-- `commits[0].message = "patch: some patch"`
+- `commits[0].message = "patch:some patch"`
 - `commits[1].message = "feat(script): add a script"`
 - `commits[2].message = "feat: add a feature"`
 
